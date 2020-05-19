@@ -1,9 +1,10 @@
-import $ivy.`com.goyeau::mill-git:0.1.0`
 import $ivy.`com.goyeau::mill-scalafix:8515ae6`
 import $ivy.`com.lihaoyi::mill-contrib-bsp:$MILL_VERSION`
-import $ivy.`de.tototec::de.tobiasroeser.mill.integrationtest:0.2.1`
-import $ivy.`io.github.davidgregory084::mill-tpolecat:0.1.2`
-import com.goyeau.mill.git.GitVersionedPublishModule
+import $exec.plugins
+import $ivy.`io.github.davidgregory084::mill-tpolecat:0.1.3`
+trait GitVersionedPublishModule extends mill.scalalib.PublishModule {
+ def publishVersion = "0.0.1-SNAPSHOT"
+}
 import com.goyeau.mill.scalafix.ScalafixModule
 import de.tobiasroeser.mill.integrationtest._
 import io.github.davidgregory084.TpolecatModule
